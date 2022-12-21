@@ -10,19 +10,31 @@ function createTeam(engineerArr,internArr){
     }
     function createInterns(intern){
         html += `<div class = "engineer col-lg-3 d-inline-block">
-        <header style = "background-color: blue;">Intern</header>
+        <header style = "background-color: rgb(11, 112, 253): color: aliceblue;">
+        <ul>${intern.getname()}</ul>
+        <ul>${intern.getrole()}</ul>
+        </header>
         <ul>${intern.getname()}</ul>
         <ul>${intern.getid()}</ul>
-        <ul>${intern.getemail()}</ul>
-        <ul>${intern.getgithub()}</ul>
+        <ul>
+        <a href="mailto:${intern.getemail()}">${intern.getemail()}</a>
+        </ul>
+        <ul>${intern.getschool()}</ul>
         </div>`
     }
     function createEngineers(engineer){
         html += `<div class = "engineer col-lg-3 d-inline-block">
-        <header style = "background-color: blue;">Engineer</header>
+
+        <header style = "background-color: rgb(11, 112, 253);color: aliceblue;">
+        <ul>${engineer.getname()}</ul>
+        <ul>${engineer.getrole()}</ul>
+        </header>
+
         <ul>${engineer.getname()}</ul>
         <ul>${engineer.getid()}</ul>
-        <ul>${engineer.getemail()}</ul>
+        <ul>
+        <a href="mailto:${engineer.getemail()}">${engineer.getemail()}</a>
+        </ul>
         <ul>${engineer.getgithub()}</ul>
         </div>`
     }
@@ -59,22 +71,27 @@ const htmlGenerater = (managerArr,engineerArr,internArr) =>
     <title>Team Profile Generater</title>
   </head>
   <body>
-    <nav class="jumbotron">
+    <nav class="jumbotron" style = "text-align: center;background-color: rgb(200, 82, 82);color: aliceblue;">
       <h1>Team</h1>
     </nav> 
 
    
     
-    <div class ="container-fluid my-5">
+    <div class ="container-fluid my-5" style = "text-align: center;">
     
     
         <div id = "team">
 
         <div class = "manager col-lg-3 d-inline-block" >
-        <header style = "background-color: blue;">Team Manager</header>
+        <header style = "background-color: rgb(11, 112, 253);color: aliceblue;">
         <ul>${managerArr[0].getname()}</ul>
+        <ul>${managerArr[0].getrole()}</ul>
+        </header>
         <ul>${managerArr[0].getid()}</ul>
-        <ul>${managerArr[0].getemail()}</ul>
+      
+        <ul>
+        <a href="mailto:${managerArr[0].getemail()}">${managerArr[0].getemail()}</a>
+        </ul>
         <ul>${managerArr[0].getoffice()}</ul>
 
         </div>
