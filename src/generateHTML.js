@@ -9,33 +9,32 @@ function createTeam(engineerArr,internArr){
 
     }
     function createInterns(intern){
-        html += `<div class = "engineer col-lg-3 d-inline-block">
-        <header style = "background-color: rgb(11, 112, 253): color: aliceblue;">
-        <ul>${intern.getname()}</ul>
-        <ul>${intern.getrole()}</ul>
+        html += `<div class = "intern col-lg-3 d-inline-block  border border-black" style=" background-color:whitesmoke" >
+        <header class="panel-heading border border-black" style = "background-color: rgb(11, 112, 253);color: aliceblue;">
+        <ul>${intern.getrole()}:  ${intern.getname()}</ul>
         </header>
-        <ul>${intern.getname()}</ul>
-        <ul>${intern.getid()}</ul>
-        <ul>
-        <a href="mailto:${intern.getemail()}">${intern.getemail()}</a>
+        
+        <ul class="panel-heading border border-black">ID: ${intern.getid()}</ul>
+        <ul class="panel-heading border border-black" >
+        <a href="mailto:${intern.getemail()}">Email: ${intern.getemail()}</a>
         </ul>
-        <ul>${intern.getschool()}</ul>
+        <ul class="panel-heading border border-black">School: ${intern.getschool()}</ul>
         </div>`
     }
     function createEngineers(engineer){
-        html += `<div class = "engineer col-lg-3 d-inline-block">
+        html += `<div class = "engineer col-lg-3 d-inline-block border border-black" style=" background-color:whitesmoke">
 
-        <header style = "background-color: rgb(11, 112, 253);color: aliceblue;">
-        <ul>${engineer.getname()}</ul>
-        <ul>${engineer.getrole()}</ul>
+        <header class="panel-heading border border-black" style = "background-color: rgb(11, 112, 253);color: aliceblue;">
+        <ul>${engineer.getrole()}:  ${engineer.getname()}</ul>
         </header>
 
-        <ul>${engineer.getname()}</ul>
-        <ul>${engineer.getid()}</ul>
-        <ul>
-        <a href="mailto:${engineer.getemail()}">${engineer.getemail()}</a>
+        
+        <ul class="panel-heading border border-black">ID: ${engineer.getid()}</ul>
+        <ul class="panel-heading border border-black">
+        <a href="mailto:${engineer.getemail()}">Email: ${engineer.getemail()}</a>
         </ul>
-        <ul>${engineer.getgithub()}</ul>
+        <ul class="panel-heading border border-black">GitHub:
+        <a href="https://github.com/${engineer.getgithub()}/"> ${engineer.getgithub()} </a>
         </div>`
     }
     return html
@@ -80,19 +79,18 @@ const htmlGenerater = (managerArr,engineerArr,internArr) =>
     <div class ="container-fluid my-5" style = "text-align: center;">
     
     
-        <div id = "team">
+        <div id = "team" p-3>
 
-        <div class = "manager col-lg-3 d-inline-block" >
-        <header style = "background-color: rgb(11, 112, 253);color: aliceblue;">
-        <ul>${managerArr[0].getname()}</ul>
-        <ul>${managerArr[0].getrole()}</ul>
+        <div class = "manager col-lg-3 d-inline-block  border border-black" style=" background-color:whitesmoke" >
+        <header class="panel-heading border border-black"style = "background-color: rgb(11, 112, 253);color: aliceblue;">
+        <ul>${managerArr[0].getrole()}:  ${managerArr[0].getname()}</ul>
         </header>
-        <ul>${managerArr[0].getid()}</ul>
+        <ul class="panel-heading border border-black">ID: ${managerArr[0].getid()}</ul>
       
-        <ul>
-        <a href="mailto:${managerArr[0].getemail()}">${managerArr[0].getemail()}</a>
+        <ul class="panel-heading border border-black">
+        <a href="mailto:${managerArr[0].getemail()}">Email: ${managerArr[0].getemail()}</a>
         </ul>
-        <ul>${managerArr[0].getoffice()}</ul>
+        <ul class="panel-heading border border-black">office number: ${managerArr[0].getoffice()}</ul>
 
         </div>
         ${createTeam(engineerArr,internArr)}
